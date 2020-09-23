@@ -8,7 +8,8 @@ RUN apt-get install --yes \
     curl \
     gnupg-agent \
     software-properties-common \
-    wget
+    wget \
+    sudo
 
 # Install python
 RUN apt-get install --no-install-recommends --yes python3

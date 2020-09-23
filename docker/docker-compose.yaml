@@ -4,6 +4,7 @@ services:
   vm:
     build: .
     volumes:
-      - ./storage:/root
+      - ~/vm_storage:/root
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
+    network_mode: host
