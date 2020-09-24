@@ -1,17 +1,17 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
-RUN apt-get update
+# Install critical packages
+RUN apt-get update && \
+    apt-get install --yes \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg-agent \
+        software-properties-common \
+        wget \
+        sudo
 
-RUN apt-get install --yes \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common \
-    wget \
-    sudo
-
-# Install python
+# Install Python
 RUN apt-get install --no-install-recommends --yes python3
 
 # Install Docker
